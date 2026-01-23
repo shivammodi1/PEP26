@@ -54,9 +54,9 @@ int main(){
 
     // Student object
 
-    Student student1(1, "Shivam", 20);
+    Student student1(1, "Shivam", 20); // it will create inside the stack memory
     Student student2(2, "Ram", 22);
-    Student *student3 = new Student(3, "Mohan", 21);
+    Student *student3 = new Student(3, "Mohan", 21); // it will create inside the heap memory
     student1.display();
     student2.display();
     student3->display();
