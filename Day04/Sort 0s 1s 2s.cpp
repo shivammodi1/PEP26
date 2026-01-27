@@ -1,5 +1,9 @@
 // DNF Algotithm to sort an array of 0s, 1s and 2s
 // (Dutch National Flag Algorithm)
+// In this approach, we maintain three pointers: low, mid, and high.
+// low = 0 points to the position to place the next 0,
+// mid = 0 points to the current element under consideration,
+// high = last position to place a 2.
 
 #include <bits/stdc++.h>
 using namespace std;
