@@ -1,6 +1,17 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// Kadane's Algorithm
+// Time Complexity: O(N)
+// Space Complexity: O(1)
+
+// In Kadane Algorithm:
+// MaxSum is track max sum in the array
+// CurrSum is track current sum including current element
+// If CurrSum becomes negative, we reset it to 0 because
+// negative sum will decrease the sum of any future subarray.
+
+
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
