@@ -5,7 +5,6 @@ vector<int> twoSum(vector<int> &nums, int target)
 {
     int st = 0;
     int end = nums.size()-1;
-    vector<int> ans(2,-1);
     int sum = 0;
     while(st<end){
         sum = nums[st] + nums[end];
@@ -17,10 +16,9 @@ vector<int> twoSum(vector<int> &nums, int target)
             st++;
         }
     }
-    return ans;
+    return {-1,-1};
 }
 
-int main()
-{
+int main(){
     return 0;
 }
