@@ -3,9 +3,10 @@ using namespace std;
 
 int removeDuplicates(vector<int> &nums){
     int k=0;
-    int num=INT_MAX;
+    int num=INT_MAX; // iterate through the array and check for duplicates
     int n=nums.size();   
     for(int i=0;i<n;i++){
+        // if current number is not equal to previous number, then it is not a duplicate
         if(num!=nums[i]){
             nums[k]=nums[i];
             k++;
