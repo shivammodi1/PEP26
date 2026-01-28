@@ -23,3 +23,14 @@ class Solution {
         return ans;
     }
 };
+int main(){
+    int n,x;
+    cin>>n>>x;
+    vector<int> arr(n);
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    Solution obj;
+    cout<<obj.findFloor(arr,x)<<endl;
+    return 0;
+}
