@@ -14,7 +14,7 @@ bool isAnagram(string s, string t){
         freq[s[i]-'a']++;
     }
     for(int i=0;i<n2;i++){
-        freq[t[i]-'a']++;
+        freq[t[i]-'a']--;
     }
 
     for(int i=0;i<freq.size();i++){
