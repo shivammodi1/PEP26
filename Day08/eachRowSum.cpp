@@ -20,7 +20,7 @@ int main(){
     for(int i=0;i<row;i++){
         int sum = 0;
         for(int j=0;j<col;j++){
-            sum+=arr[i][j]
+            sum+=arr[i][j];
         }
         if(ans<sum){
             ans=sum;
