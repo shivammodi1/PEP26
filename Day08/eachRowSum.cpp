@@ -14,7 +14,7 @@ int main(){
         }
     }
     
-    int ans =0;
+    int ans = INT_MIN;
     int index = -1;
     
     for(int i=0;i<row;i++){
