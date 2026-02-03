@@ -44,7 +44,7 @@ int main(){
         cout<<tmp->data<<" ";
         tmp=tmp->next;
     }
-
+ 
     head = reverseLL(head);
 
     tmp = head;
