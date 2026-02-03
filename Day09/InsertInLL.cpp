@@ -21,15 +21,22 @@ Node* insertAtStart(Node* head, int x){
 
 // insert at any position function
 Node* insertAtPosition(Node* head,int pos,int val){
-    if(pos==0){
+    if(pos==1){
         Node *newNode = new Node(val);
         newNode->next = head;
         return newNode;
     }
     Node* temp = head;
     // reach till (pos-1)th node
-    for(int i=0;i<pos-1;i++){
+    for(int i=1;i<pos-1;i++){
+        if(temp==NULL){
+            return head; // position is greater than length of linked list
+        }
         temp = temp->next;
+    }
+
+    if(temp==NULL){
+        return head; // position is greater than length of linked list
     }
 
     Node* newNode = new Node(val);
