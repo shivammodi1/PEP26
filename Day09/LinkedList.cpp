@@ -11,6 +11,23 @@ class Node{
     }
 };
 
+
+Node* reverseLL(Node* head){
+    if(head==NULL || head->next==NULL){
+        return head;
+    }
+    Node* pre=NULL;
+    Node* curr=head;
+    Node* forward=NULL;
+    while(curr){
+        forward=curr->next;
+        curr->next=pre;
+        pre=curr;
+        curr=forward;
+    }
+    return pre;
+}
+
 int main(){
     Node *head = new Node(4);
     Node *newNode1 = new Node(5);
@@ -28,5 +45,17 @@ int main(){
         tmp=tmp->next;
     }
 
+    head = reverseLL(head);
+
+    tmp = head;
+
+    while(tmp){
+        cout<<tmp->data<<" ";
+        tmp=tmp->next;
+    }
+
     return 0;
 }
+
+// Output: 4 5 6 7
+
