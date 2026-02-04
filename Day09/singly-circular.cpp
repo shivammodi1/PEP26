@@ -27,6 +27,56 @@ Node* insertAtEnd(Node* head, int val){
     return head;
 }
 
+// delete node at end
+Node* deleteAtEnd(Node* head){
+    if(head==NULL){
+        return head;
+    }
+
+    if(head->next == head){
+        delete head;
+        head = NULL;
+        return head;
+    }
+
+
+    Node* tmp=head;
+    // stop tmp before end node
+    while(tmp->next->next != head){
+        tmp=tmp->next;
+    }
+
+    // delete node from end
+    Node* toDel = tmp->next;
+    delete toDel;
+    tmp->next = head;
+    return head;
+}
+
+// delete at beginning
+Node* deleteAtBeginning(Node* head){
+    if(head==NULL){
+        return head;
+    }
+
+    if(head->next == head){
+        delete head;
+        head = NULL;
+        return head;
+    }
+
+    Node* temp = head;
+    // move to last node
+    while(temp->next != head){
+        temp = temp->next;
+    }
+
+    Node* toDel = head;
+    head = head->next;
+    temp->next = head;
+    delete toDel;
+    return head;
+}
 
 int main(){
     Node* head = NULL;
@@ -42,7 +92,7 @@ int main(){
             cout<<temp->data<<endl;
             temp = temp->next;
             if(temp==head){
-                return;
+                return 0;
             }
         }
         cout << endl;
