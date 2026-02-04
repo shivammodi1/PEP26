@@ -27,7 +27,6 @@ Node* insertAtEnd(Node* head, int val){
     return head;
 }
 
-  /
 
 int main(){
     Node* head = NULL;
@@ -51,3 +50,5 @@ int main(){
 
     return 0;
 }
+
+
