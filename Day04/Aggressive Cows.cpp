@@ -19,6 +19,7 @@ int aggressiveCows(vector<int>& stalls, int k){
             }
         }
 
+        // if we can place all cows with min distance = mid then we can try for bigger distance
         if(cow>=k){
             ans=mid;
             st=mid+1;

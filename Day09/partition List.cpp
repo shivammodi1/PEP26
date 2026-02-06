@@ -12,46 +12,37 @@ public:
     }
 };
 
-Node* partition(Node* head, int x){
-    if(head == NULL){
-        return NULL;
-    }
+class Solution {
+public:
+    Node* partition(Node* head, int x) {
+        if(head == NULL) return NULL;
 
-    Node* dummyNode = new Node(-1);
-    Node* temp = head;
+        Node* smallDummy = new Node(-1);
+        Node* largeDummy = new Node(-1);
 
-    // list for elements < x
-    while(temp){
-        if(temp->data < x){
-            Node* newNode = new Node(temp->data);
-            newNode->next = dummyNode->next;
-            dummyNode->next = newNode;
+        Node* smallTail = smallDummy;
+        Node* largeTail = largeDummy;
+
+        Node* temp = head;
+
+        while(temp){
+            if(temp->data < x){
+                smallTail->next = new Node(temp->data);
+                smallTail = smallTail->next;
+            }
+            else{
+                largeTail->next = new Node(temp->data);
+                largeTail = largeTail->next;
+            }
+            temp = temp->next;
         }
-        temp = temp->next;
+
+        // join both lists
+        smallTail->next = largeDummy->next;
+
+        return smallDummy->next;
     }
-
-    Node* dummyNode2 = new Node(-1);
-    temp = head;
-
-    // list for elements >= x
-    while(temp){
-        if(temp->data >= x){
-            Node* newNode = new Node(temp->data);
-            newNode->next = dummyNode2->next;
-            dummyNode2->next = newNode;
-        }
-        temp = temp->next;
-    }
-
-    // join both lists
-    Node* p = dummyNode;
-    while(p->next){
-        p = p->next;
-    }
-    p->next = dummyNode2->next;
-
-    return dummyNode->next;
-}
+};
 
 // helper function to insert at end
 Node* insert(Node* head, int val){
