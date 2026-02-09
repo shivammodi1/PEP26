@@ -54,5 +54,17 @@ class stack{
 };
 
 int main(){
+    stack s(5);
+    s.push(1);
+    s.push(2);
+    s.push(3);
+    s.push(4);
+    s.push(5);
+    cout << "Top element: " << s.peek() << endl;
+    cout << "Size of stack: " << s.getSize() << endl;
+    s.pop();
+    cout << "Top element after pop: " << s.peek() << endl;
+    cout << "Size of stack after pop: " << s.getSize() << endl;
+    return 0;
 
 }
