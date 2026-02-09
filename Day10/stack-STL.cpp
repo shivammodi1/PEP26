@@ -20,5 +20,15 @@ int main(){
     st.empty(); // it will return true if stack is empty    
     // size
     st.size(); // it will return the size of stack
+
+    cout<<endl;
+
+    // iterate over stack
+    while(!st.empty()){
+        cout << st.top() << " ";
+        st.pop();
+    }
+
+
     return 0;
 }
