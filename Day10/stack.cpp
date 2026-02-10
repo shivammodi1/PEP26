@@ -53,6 +53,56 @@ class stack{
     }
 };
 
+// using LL
+class Node{
+    public:
+    int data;
+    Node* next;
+    Node(int x){
+        data = x;
+        next = NULL;
+    }
+};
+
+class StackLL{
+    Node* top;
+    int size;
+    public:
+    StackLL(){
+        top = NULL;
+        size = 0;
+    }
+    void push(int x){
+        Node* newNode = new Node(x);
+        newNode->next = top;
+        top = newNode;
+        size++;
+    }
+    void pop(){
+        if(top == NULL){
+            cout << "Stack Underflow" << endl;
+            return;
+        }
+        Node* temp = top;
+        top = top->next;
+        delete temp;
+        size--;
+    }
+    int peek(){
+        if(top == NULL){
+            cout << "Stack is empty" << endl;
+            return -1;
+        }
+        return top->data;
+    }
+    int getSize(){
+        return size;
+    }
+    bool empty(){
+        return top == NULL;
+    }
+};
+
 int main(){
     stack s(5);
     s.push(1);
