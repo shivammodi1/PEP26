@@ -36,6 +36,7 @@ public:
             st.push(nums2[i]);
         }
 
+        // finding next greater element for each element in nums1 using ans2
         for(int i=0;i<n1;i++){
             ans1[i]=ans2[nums1[i]];
         }
