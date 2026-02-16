@@ -11,22 +11,27 @@
  */
 class Solution {
 public:
-    int sumOfLeftLeaves(TreeNode* root) {
-        if(root==NULL){
+    int helper(TreeNode* root, int &sum){
+        if(!root){
             return 0;
         }
-        int c=0;
-
-        // check if left node is leaf node or not
-        if(root->left && root->left->left == NULL && root->left->right==NULL){
-            c+= root->left->val;
+        // check if left node is leaf node then add it to sum
+        if( root->left && !root->left->left && !root->left->right){
+        sum += root->left->val;
         }
-        // if left node is not leaf node then we need to check for left and right node of left node
-        c+=sumOfLeftLeaves(root->left);
-        c+=sumOfLeftLeaves(root->right);
+        // if left node is not leaf node then we need to go to left and right subtree
+        int left = helper(root->left,sum);
+        int right = helper(root->right,sum);
 
-        // return the sum of left leaf node
-        return c;
+        return right + left; // return the sum of left and right subtree
+
+    }
+    int sumOfLeftLeaves(TreeNode* root) {
+        if(!root){
+            return 0;
+        }
+        int sum=0;
+        helper(root,sum);
+        return sum;
     }
 };
-

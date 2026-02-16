@@ -42,14 +42,14 @@ int helper(Node *root, int &sum)
     }
 
     // Correct negative values handling
-    int left = max(0, Path(root->left, sum));
-    int right = max(0, Path(root->right, sum));
+    int left = max(0, helper(root->left, sum));
+    int right = max(0, helper(root->right, sum));
 
     // Always update sum, even if one or both children are null
-    sum = max(sum, root->val + left + right);
+    sum = max(sum, root->data + left + right);
 
     // Return the value of the current node plus the larger of the two subtrees
-    return root->val + max(left, right);
+    return root->data + max(left, right);
 }
 
 int maxSum(Node *root)
