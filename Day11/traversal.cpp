@@ -21,6 +21,23 @@ void inorder(Node* root){
     inorder(root->right);
 }
 
+//PreOrder Traversal: Root, Left, Right
+void preorder(Node* root){
+    if(root == NULL) return;
+    cout << root->data << " ";
+    preorder(root->left);
+    preorder(root->right);
+}
+
+//PostOrder Traversal: Left, Right, Root
+void postorder(Node* root){
+    if(root == NULL) return;
+    postorder(root->left);
+    postorder(root->right);
+    cout << root->data << " ";
+}
+
+
 int main(){
     return 0;
 }
