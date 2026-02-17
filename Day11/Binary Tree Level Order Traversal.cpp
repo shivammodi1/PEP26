@@ -36,7 +36,7 @@ vector<vector<int>> levelOrder(Node* root){
 //  lvl 0             1
 //                  /   \
 //  lvl 1          2     3
-//                / \     \
+//                   / \     \
 //  lvl 2        4   5     6
 // ans: [{1},{2,3},{4,5,6}]
 

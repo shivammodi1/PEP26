@@ -27,6 +27,9 @@ long long kthLargestLevelSum(Node* root, int k){
 
     sort(ans.begin(),ans.end());
     int n=ans.size();
+    if(k> n){
+        return -1;
+    }
     return ans[n-k];
 }
 
