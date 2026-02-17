@@ -25,8 +25,8 @@ vector<int> topView(Node* root){
         return ans;
     }
 
-    map<int,int> mp;
-    queue<pair<Node*,int>>q;
+    map<int,int> mp; // map me hd and node data store krna hai
+    queue<pair<Node*,int>>q; // q me node and hd store krna hai
     q.push({root,0});
 
     while(!q.empty()){
