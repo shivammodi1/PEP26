@@ -22,7 +22,8 @@ Node* searchBST(Node* root, int key){
     if(root->data==key){
         return root;
     }
-    else if(root->data > key){
+    
+    if(root->data > key){
         return searchBST(root->left,key);
     }else{
         return searchBST(root->right,key);
