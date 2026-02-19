@@ -40,11 +40,11 @@ void InOrder(Node* root,Node * &tmp){
     tmp = tmp->right;
     InOrder(root->right,tmp);
 }
-
+   
 Node *flattenBST(Node *root){
     if(!root){
             return root;
-        }
+        }  
         
         Node* head = NULL;
         Node* tmp = new Node(-1);
