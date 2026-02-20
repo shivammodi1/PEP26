@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+// k th largest element in an array
+// for that :
+// 1. we can use min heap(priority queue) 
+// push element in min heap and when minHeap size > k then pop the top element from min heap, at the end the top element of min heap will be the k th largest element in the array
+
+int findKthLargest(vector<int>&nums,int k){
+    priority_queue<int,vector<int>,greater<int>> minHeap;
+
+    for(int i=0i<nums.size();i++){
+        min.push(nums[i]);
+        if(min.size()>k){
+            min.pop();
+        }
+        
+    }
+    return min.top();   // kth largest element in the array is top of the min heap
+}
+
+int main(){
+
+}
