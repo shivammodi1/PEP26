@@ -59,7 +59,6 @@ public:
                 largest = right;
             }
 
-            
             if (largest != index)
             {
                 swap(heap[index], heap[largest]);

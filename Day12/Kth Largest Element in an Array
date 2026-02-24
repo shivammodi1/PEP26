@@ -19,6 +19,10 @@ int findKthLargest(vector<int>&nums,int k){
     return minHeap.top();   // kth largest element in the array is top of the min heap
 }
 
+// time complexity : O(nlogk) where n is the number of elements in the array and k is the size of the min heap
+// space complexity : O(k) for the min heap
+
+
 int main(){
 
 }
